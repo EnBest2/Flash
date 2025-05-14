@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- Az iOS “Add to Home Screen” támogatása -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Tanuló Kártya App</title>
+</head>
+<body>
+  <h1>Tanuló Kártya App</h1>
+  <form id="cardForm" enctype="multipart/form-data">
+    <div>
+      <label for="title">Cím:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+      <label for="content">Tartalom:</label>
+      <textarea id="content" name="content" required></textarea>
+    </div>
+    <div>
+      <label for="category">Kategória:</label>
+      <select id="category" name="category" required>
+        <option value="Irodalom">Irodalom</option>
+        <option value="Nyelvtan">Nyelvtan</option>
+        <option value="Történelem">Történelem</option>
+        <option value="Angol">Angol</option>
+      </select>
+    </div>
+    <div>
+      <label>Fájltípus választás:</label>
+      <input type="radio" id="typePhoto" name="fileType" value="photo" checked>
+      <label for="typePhoto">Fotó</label>
+      <input type="radio" id="typePdf" name="fileType" value="pdf">
+      <label for="typePdf">PDF</label>
+    </div>
+    <div id="photoInputDiv">
+      <label for="photo">Fotó feltöltése:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+    </div>
+    <div id="pdfInputDiv" style="display:none;">
+      <label for="pdf">PDF feltöltése:</label>
+      <input type="file" id="pdf" name="pdf" accept="application/pdf">
+    </div>
+    <button type="submit">Kártya létrehozása</button>
+  </form>
+  
+  <h2>Létrehozott kártyák</h2>
+  <div id="cardsList"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
